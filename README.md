@@ -79,3 +79,10 @@ year = 2025
 # %.2f 表示小数点2位
 print("今天是%d年%02d月%d日，星期%s, 天气%s，温度%.2f" % (year, month, day, week, weather, temp))
 ```
+
+## 流程图
+![img.png](images/py-12-02.png)
+![img_1.png](images/py-12-01.png)
+
+## 章末总结
+![img.png](images/py-13-01.png)
