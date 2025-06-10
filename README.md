@@ -141,3 +141,54 @@ print(isinstance(a, int))
 print(isinstance(a, float))
 ```
 ![img.png](images/py-18-01.png)
+
+## 整数
+```python
+# 整数变量的定义
+num = 10
+print(num)
+
+# 负数
+num2 = -10
+print(num2)
+
+# 查看变量的数据类型
+print(type(num2))
+
+# 输入数字的计算
+num3 = input("请输入一个数字:")
+print(type(num3))
+num3 = int(num3) + 10
+print(num3)
+```
+
+## 浮点数
+```python
+# 浮点数的计算
+n1 = 0.1
+n2 = 0.2
+# 计算精度有误差
+print(n1 + n2)
+
+# 四舍五入函数：round
+n3 = round(n1 + n2, 2)
+print(n3)
+
+import math
+n1 = 2.1
+n2 = 15.256
+# 向上取整： ceil
+n4 = math.ceil(n1 + n2)
+print(n4)
+# 向下取整: floor
+n5 = math.floor(n1 + n2)
+print(n5)
+```
+
+## 布尔型
+![img.png](images/py-21-01.png)
+```python
+a = True
+b = False
+print(a, b)
+```
