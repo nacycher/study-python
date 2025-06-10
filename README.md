@@ -1,10 +1,15 @@
 # study-python
 study-python
 
+# 目录
+- [第一个程序](#第一个程序)
+- [变量](#变量)
+
 # 简介
 章节：
 ![img.png](images/py-01-01.png)
 ![img_1.png](images/py-01-02.png)
+
 # 第一个程序
 ```python
 # 打印数字
@@ -86,3 +91,53 @@ print("今天是%d年%02d月%d日，星期%s, 天气%s，温度%.2f" % (year, mo
 
 ## 章末总结
 ![img.png](images/py-13-01.png)
+
+# 变量
+## 变量的创建
+创建单个，多个变量
+![img.png](images/py-15-01.png)
+![img.png](images/py-15-02.png)
+```pycon
+# 任务：买苹果
+price = 10.5
+weight = 7.5
+money = price * weight
+print("总共消费了%.2f" % money)
+```
+## 变量的修改
+```python
+# year = 2023
+# print(year)
+# year = 2024
+# print(year)
+#
+# # 正确执行,不同类型的变量可以相互赋值
+# money = '10元'
+# money = 10
+# print(money)
+
+# 超市打折活动
+price = 10.5
+weight = 7.5
+money = price * weight
+money = money - 5
+print("总共消费了%.2f" % money)
+```
+
+## 变量的命名
+python使用大写表示常量
+![img.png](images/py-17-01.png)
+- 见名知义
+- 不能使用关键字
+- 不能使用数字开头
+- 驼峰命名法
+
+## 变量的类型
+```python
+a = 'afd'
+print(type(a))
+print(isinstance(a, str))
+print(isinstance(a, int))
+print(isinstance(a, float))
+```
+![img.png](images/py-18-01.png)
