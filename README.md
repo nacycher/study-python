@@ -192,3 +192,89 @@ a = True
 b = False
 print(a, b)
 ```
+
+## 字符串
+```python
+# 创建字符串
+s1 = 'hello'
+print(s1)
+s2 = "hello"
+print(s2)
+# 3引号创建字符串
+s3 = '''2024
+hello
+world'''
+print(s3)
+
+s4  = "it's a hat"
+print(s4)
+# 使用转义字符\
+s5 = '123\'4\"567'
+print(s5)
+
+# 字符串拼接
+print('字符串拼接-----------')
+print(s1 + s2)
+n = 5
+# print(s1 + n) # 字符串和数字不能直接相加
+
+# 字符串乘法
+print('*' * 10)
+print(10 * 'happy')
+
+```
+
+## 字符串索引
+```python
+# 创建字符串
+s = "hello world"
+print(s[0])
+print(s[4])
+print(s[-1])
+# 切片写法，包含起始索引，不包含结束索引
+print(s[0:4])
+print(s[6:9])
+# 跳着取
+s2 = "123456789"
+print(s[0:9:2])
+
+# 字符串反转
+print(s2[-1:-10:-1])
+print(s2[::-1])
+
+```
+ 切片写法
+![img.png](images/py-23-01.png)
+
+## 类型转换
+```python
+# 转换为整数int
+s = '2024'
+print(s)
+# 纯数字的才可以转换
+n = int(s)
+print(n)
+print(type(s), type(n))
+s1 = 2.23
+print(int(s1))
+s2, s3 = True, False
+print(int(s2), int(s3))
+# 转换为浮点数float
+s = '123'
+print(float(s))
+n = 2024
+print(float(n))
+
+# 转换为布尔值bool
+# 转换为字符串str
+
+```
+
+## 小整数地址问题
+python对于-5-256之间的整数，会缓存起来，不会重复创建  
+对于这些数的引用，会指向同一个地址
+```python
+a = 5
+c = 5
+print(id(a), id(c))
+```
