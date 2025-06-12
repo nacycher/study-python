@@ -4,6 +4,7 @@ study-python
 # 目录
 - [第一个程序](#第一个程序)
 - [变量](#变量)
+- [运算符](#运算符)
 
 # 简介
 章节：
@@ -280,4 +281,86 @@ print(id(a), id(c))
 ```
 
 ## 章末总结
-![img.png](img.png)
+![img.png](images/py-27-01.png)
+
+
+# 运算符
+
+
+## 算术运算符
+![img.png](images/py-28-01.png)
+```python
+print(4+1)
+a= 10
+b= 3
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+print(a%b) # 取余数，求模
+print(a**b) # 幂运算，a的b次方
+print(3 + 2 * 4 ** 2) # 优先级，先算幂运算，再算乘法，最后算加法
+```
+
+## 赋值运算符
+```python
+a = 2
+print(a)
+a += 2
+print(a)
+a = a + 2
+print(a)
+```
+![img_1.png](images/py-28-02.png)
+
+## 比较运算符
+![img.png](images/py-30-01.png)
+```python
+print(3 != 3)
+print(3 == 2)
+print(3 >= 2)
+print(3 <= 2)
+print(3.0 == 3)
+print('hello' > 'hell')
+print('he' > 'hw') # 比较的是ASCII码值
+print(ord('a'), ord('z'))
+```
+
+## 逻辑运算符
+```python
+# and
+print(True and False)
+print(True and True)
+print(True and False and True)
+print(1==1 and True and 2<3)
+# ’‘是False，其他有值的字符串是True
+# and 会返回第一个为False的值，如果都为True，返回最后一个值
+# or 会返回第一个为True的值，如果都为False，返回最后一个值
+# 这里适用与一些兜底数据，默认值
+print('hello' and 'hi')
+print('' and 'hi')
+print(0 and 'hi')
+
+# or
+print(True or False)
+print(2024 or 2025)
+print(0 or '888')
+
+# not
+print(not True)
+print(not 1)
+print(not 'hello')
+
+# 优先级 not > and > or
+print(True and not False)
+```
+![img_1.png](images/py-31-01.png)
+
+## 位运算符
+![img.png](images/py-32-01.png)
+
+## 成员运算符
+![img.png](images/py-33-01.png)
+
+## 章末总结
+![img.png](images/py-35-01.png)
