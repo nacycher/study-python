@@ -5,6 +5,7 @@ study-python
 - [第一个程序](#第一个程序)
 - [变量](#变量)
 - [运算符](#运算符)
+- [条件判断](#条件判断)
 
 # 简介
 章节：
@@ -364,3 +365,88 @@ print(True and not False)
 
 ## 章末总结
 ![img.png](images/py-35-01.png)
+
+# 条件判断
+![img.png](images/py-37-01.png)
+
+# 单分支
+```python
+weather = '下雨'
+if weather == '下雨':
+    print('带伞出门') # if语句的下级代码
+
+if False:
+    print('111')
+
+# 判断年龄是否大于等于18
+age = 19
+if age >= 18:
+    print('可以去网吧')
+    print('hello')
+```
+
+![img.png](images/py-37-02.png)
+
+## 双分支
+```python
+weather = "下雨"
+if weather == "下雨":
+    print('带雨伞')
+else:
+    print("戴帽子")
+
+# 判断年龄
+age = int(input("请输入你的年龄："))
+if age >= 18:
+    print("可以去网吧")
+else:
+    print("不能去网吧")
+```
+
+## 多分支
+```python
+score = 98
+
+if score >= 98:
+    print("A")
+elif score >80 and score <90:
+    print("B")
+elif score >70 and score < 80:
+    print("C")
+else:
+    print("D")
+
+# bmi计算
+w = float(input("请输入你的体重，单位KG："))
+h = float(input("请输入你的身高，单位M："))
+bmi = w / (h * h)
+print(bmi)
+if bmi < 18.5:
+    print("偏瘦")
+elif 18.5 <= bmi < 25:
+    print("正常")
+elif 25 <= bmi < 30:
+    print("偏胖")
+else:
+    print("肥胖")
+```
+## 嵌套分支
+不推荐使用，可读性差
+
+## match语句
+python3.10新增的语法
+```python
+x = 4
+match x:
+    case 1:
+        print("111")
+    case 2:
+        print("222")
+    case 3:
+        print("333")
+    case 4:
+        print("444")
+```
+
+## 章末总结
+![img.png](images/py-42-01.png)
