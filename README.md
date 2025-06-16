@@ -450,3 +450,14 @@ match x:
 
 ## 章末总结
 ![img.png](images/py-42-01.png)
+
+## 本章练习
+```python
+age = input("请输入你的年龄：")
+if age.isdigit():
+    age = int(age)
+    if 0 <= age <= 120:
+        print("输入正确")
+    else:
+        print("输入错误")
+```
