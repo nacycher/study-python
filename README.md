@@ -6,6 +6,7 @@ study-python
 - [变量](#变量)
 - [运算符](#运算符)
 - [条件判断](#条件判断)
+- [循环](#循环)
 
 # 简介
 章节：
@@ -460,4 +461,95 @@ if age.isdigit():
         print("输入正确")
     else:
         print("输入错误")
+```
+
+# 循环
+
+## while循环
+![img.png](images/py-45-01.png)
+```python
+# 初始条件
+n = 0
+while n < 5:
+    print("-" * 10)
+    n += 1
+    print(n)
+
+# 求和 1 + 2 + 3 + ... + 100
+n = 1
+result = 0
+while n <= 100:
+    result += n
+    n += 1
+print(result)
+```
+
+## for循环
+```python
+for i in range(10):
+    print(i)
+
+print(list(range(10)))
+
+result = 0
+for i in range(1, 101):
+    result += i
+print(result)
+
+# 1! + 2! + 3!.... + n!
+def fib(n):
+    if n <= 1:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+        i += 1
+    return result
+
+def fib_sum(n):
+    if n <= 1:
+        return 1
+    result = 0
+    for i in range(1, n + 1):
+        result += fib(i)
+        i += 1
+    return result
+print(fib(3))
+print(fib_sum(3))
+```
+
+## break和continue
+```python
+while True:
+    print("-" * 10)
+    break
+
+while True:
+    name = input("请输入你的名字：")
+    if name == "lb":
+        print("欢迎回家")
+        break
+    else:
+        print("不在家")
+
+for i in range(10):
+    if i > 0 and i % 3 == 0:
+        print(i)
+        break
+
+# 判断一个数是否为质数
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+        i += 1
+    return True
+
+print("2是不是质数:", is_prime(2))
+print("3是不是质数:", is_prime(3))
+print("4是不是质数:", is_prime(4))
+print("5是不是质数:", is_prime(5))
+print("10是不是质数:", is_prime(10))
 ```
