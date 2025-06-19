@@ -552,4 +552,36 @@ print("3是不是质数:", is_prime(3))
 print("4是不是质数:", is_prime(4))
 print("5是不是质数:", is_prime(5))
 print("10是不是质数:", is_prime(10))
+
+# 跳过当此循环
+for i in  range(5):
+    if i == 2:
+        continue
+    print(i)
 ```
+
+## 指数爆炸
+```python
+# 纸的厚度
+n = 0.1
+w = n
+for i in range(50):
+    w *= 2
+    print(w)
+
+# 国王熟麦粒
+# 1-1 2-2 3-4 4-8..
+g = 1 # 当前格子的麦粒数
+total = 0 # 麦粒总数
+a = 1 # 当前格子的序号
+while a <= 100:
+    total += g
+    g *= 2
+    a += 1
+    print(total)
+
+# 人生复利公式
+```
+
+## 本章总结
+![img.png](images/py-50-01.png)
