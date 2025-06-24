@@ -7,6 +7,7 @@ study-python
 - [运算符](#运算符)
 - [条件判断](#条件判断)
 - [循环](#循环)
+- [组合数据类型](#组合数据类型)
 
 # 简介
 章节：
@@ -585,3 +586,132 @@ while a <= 100:
 
 ## 本章总结
 ![img.png](images/py-50-01.png)
+
+
+# 组合数据类型
+
+## 序列
+```python
+# 列表创建
+# 列表创建
+# 列表创建
+list1 = []
+print(list1)
+print(type(list1))
+list2 = [1, 2, 3, True, 'hello']
+print(list2)
+list3 = list("12345678")
+print(list3)
+# 列表的索引
+print(list3[1])
+# 列表的切片, 从下标为2的元素开始，到下标为6的元素结束，步长为2
+print(list3[2:6:2])
+# 列表的乘法和加法
+print(list3 + list2)
+print(list3 * 3)
+# 列表的成员运算
+print('1' in list3)
+print('1,2,3' in list3)
+# 列表的函数
+print(len(list3))
+print(max(list3))
+print(min(list3))
+# del list3
+
+
+print('-' * 20)
+
+# 列表的遍历
+for i in list2:
+    print(i)
+for i,j in enumerate(list2):
+    print(i,j)
+for i in range(len(list2)):
+    print(i, list2[i])
+
+# 列表的常用方法
+# 添加元素
+list3.append('666')
+print(list3)
+list3.extend(list2)
+print(list3)
+list3.insert(1,'777')
+print(list3)
+# 根据索引删除元素
+list3.pop(1)
+print(list3)
+list3.remove('666')
+print(list3)
+# 清空列表
+list.clear(list2)
+
+# 计算若干个人的平均年龄
+age = [10, 20, 30, 40, 23, 45]
+print(sum(age) / len(age))
+```
+![img.png](images/py-53-01.png)
+
+## 元组
+```python
+tuple1 = (1, 2, 3, True, 'hello')
+print(tuple1)
+print(type(tuple1))
+# 如果元组只有一个元素，需要在元素后面添加逗号，否则会被认为是小括号计算
+tuple2 = (1,)
+print(tuple2)
+tuple3 = tuple()
+print(type(tuple3))
+```
+![img.png](images/py-58-01.png)
+
+## range函数
+```python
+print(list(range(10)))
+print(list(range(2,10)))
+print(list(range(2,10,3)))
+
+# 高斯求和
+total = 0
+for i in range(10):
+    total += i
+print(total)
+
+# 水仙花数，每数字的立方和等于这个数本身
+for i in range(100, 1000):
+    # a = i // 100
+    # b = (i % 100) // 10
+    # c = i % 10
+    t = str(i) # 将int转换为str，123 -> "123"
+    a = int(t[0])
+    b = int(t[1])
+    c = int(t[2])
+    if a ** 3 + b ** 3 + c ** 3 == i:
+        print(i)
+```
+![img.png](images/py-61-01.png)
+
+
+## 字符串
+```python
+s1 = 'hello world'
+
+# 序列的通用操作
+print(s1 + ' mia')
+print(s1*3)
+print(len(s1))
+print('h' in s1)
+# 遍历
+for i in s1:
+    print(i)
+for index, value in enumerate(s1):
+    print(index, value)
+# 类型转换
+print(list(s1))
+print(tuple(s1))
+print(set(s1))
+# 字符串函数
+# print(s1.strip())
+print(s1.split(" "))
+print("#".join(s1))
+```
+![img.png](images/py-62-01.png)
