@@ -715,3 +715,47 @@ print(s1.split(" "))
 print("#".join(s1))
 ```
 ![img.png](images/py-62-01.png)
+
+## 字典
+![img.png](images/py-63-01.png)
+```python
+# 字典的创建
+d = {
+    "name" : "lb",
+    "gender" : True,
+    "name" : 'lb2' # 建重复的话，会覆盖之前的值
+}
+print(d)
+print(type(d))
+# 新增键值对
+d['height'] = 170
+print(d)
+# 获取键值对
+name = d['name']
+print(name)
+# 修改键值对
+d['height'] = 173
+# 字典的遍历
+for k, v in d.items():
+    print(k, v)
+for k in d.keys():
+    print(k)
+for v in d.values():
+    print(v)
+# 字典的常用方法
+d.pop('name')
+print(d)
+```
+
+## 集合
+![img.png](images/py-64-01.png)
+```python
+s1 = set()
+s = {1,2,3,4,5,1,2}
+print(s)
+print(type(s))
+s = set([1,2,3,4,5])
+print(s)
+s = set("1223")
+print(s)
+```
