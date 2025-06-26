@@ -8,6 +8,7 @@ study-python
 - [条件判断](#条件判断)
 - [循环](#循环)
 - [组合数据类型](#组合数据类型)
+- [异常](#异常)
 
 # 简介
 章节：
@@ -805,3 +806,90 @@ for i in range(3):
 ```
 
 ## 计算天数
+```python
+# 题目要求，输入2025-02-25，计算这一天数这一年的第几天
+date = input("请输入日期（格式：yyyy-mm-dd）：").split("-")
+year = int(date[0])
+month = int(date[1])
+day = int(date[2])
+days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+print(sum(days))
+
+result = 0
+for i in range(month):
+    result += days[i]
+result += day
+print("这一天是这一年的第", result, "天")
+```
+
+# 异常
+![img.png](images/py-71-01.png)
+
+## try
+```python
+try:
+    print("有可能出现错误的代码")
+    print(1 + '1')
+except:
+    print("如果出现错误，执行这里的代码")
+
+try:
+    n = int(input("请输入一个数字："))
+    n = 5 / n
+    print(n)
+except ZeroDivisionError:
+    print("除数不能为0")
+except:
+    print("输入的数字有误")
+```
+
+## raise
+```python
+try:
+    pwd = input("请输入你的密码：")
+    if len(pwd) < 8:
+        raise Exception("密码长度不够")
+except Exception as e:
+    print(e)
+```
+
+## 本章总结
+![img.png](images/py-76-01.png)
+
+## 简易计算器
+```python
+while True:
+    try:
+        op = input("请输入一个四则运算式（例如1+2）：")
+        if '+' in op:
+            a = int(op.split('+')[0])
+            b = int(op.split('+')[1])
+            print(a + b)
+            continue
+        elif '-' in op:
+            a = int(op.split('-')[0])
+            b = int(op.split('-')[1])
+            print(a - b)
+            continue
+        elif '*' in op:
+            a = int(op.split('*')[0])
+            b = int(op.split('*')[1])
+            print(a * b)
+            continue
+        elif '/' in op:
+            a = int(op.split('/')[0])
+            b = int(op.split('/')[1])
+            print(a / b)
+            continue
+        elif 'c' == op:
+            print("退出")
+            break
+        else:
+            raise Exception("输入错误,请重新输入")
+    except ZeroDivisionError:
+        print("除数不能为0")
+        continue
+    except Exception as e:
+        print(e)
+        continue
+```
