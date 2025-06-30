@@ -9,6 +9,7 @@ study-python
 - [循环](#循环)
 - [组合数据类型](#组合数据类型)
 - [异常](#异常)
+- [函数](#函数)
 
 # 简介
 章节：
@@ -893,3 +894,97 @@ while True:
         print(e)
         continue
 ```
+
+# 函数
+![img.png](images/py-79-01.png)
+
+## 参数默认值
+```python
+def power(x, n = 2): # n = 2 是默认参数
+    return x ** n
+```
+
+## 可变参数
+```python
+def total(*args): # 可变参数，元组
+    print(args)
+    for i in args:
+        print(i)
+
+total(1, 2, 3, 4, 5)
+
+def f(**kwargs): # 可变参数，字典
+    for k, v in kwargs.items():
+        print(k, v)
+
+d = {"name":"小明", "age":18, "gender":"男"}
+e = {"name1":"小明", "age1":18, "gender1":"男"}
+f(**d, **e)
+```
+
+## 变量作用域
+局部变量、全局变量
+```python
+# 全局变量
+num1 = 10
+
+# 局部变量
+def test():
+    global num1 # 声明使用的变量是全局变量
+    num2 = 20
+    num1 = 20 # 局部变量
+    print(num1)
+    print(num2)
+
+test()
+
+print("全局变量num1：", num1)
+```
+
+## 匿名函数
+```python
+from functools import reduce
+
+
+def sum(a, b):
+    return a + b
+
+print(sum(1, 2))
+
+# 匿名函数
+result = lambda a,b:a+b
+print(result(1, 2))
+
+# map函数处理列表a
+a = [1, 2, 3, 4, 5]
+result = map(lambda x:x**2, a)
+print(list(result))
+
+# reduce 累积
+result = reduce(lambda  x,y:x*y, a)
+print(result)
+
+# filter 过滤
+result = filter(lambda x:x%2==0, a)
+print(list(result))
+
+```
+
+## 内置函数
+
+## 递归函数
+```python
+# 10阶台阶，每次上1阶或2阶，有多少种走法
+# 3阶：3种，111，12，21
+# f(n) = f(n-1) + f(n-2)
+def f(n): # 计算出n阶楼梯有多少种走法
+    if n <= 2:
+        return n
+    return f(n-1) + f(n-2)
+
+print(f(3))
+print(f(10))
+```
+
+## 本章总结
+![img.png](images/py-86-01.png)
