@@ -10,6 +10,7 @@ study-python
 - [组合数据类型](#组合数据类型)
 - [异常](#异常)
 - [函数](#函数)
+- [模块](#模块)
 
 # 简介
 章节：
@@ -988,3 +989,19 @@ print(f(10))
 
 ## 本章总结
 ![img.png](images/py-86-01.png)
+
+
+# 模块
+
+## 导入模块
+```python
+# import my_module
+# from my_module import total,author
+from my_module import add as f
+from my_module import *
+result = total(1,2,3,4)
+print(result)
+print(f(1,2))
+print(author)
+```
+
